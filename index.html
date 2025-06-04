@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Impresos</title>
+  
+  <!-- Tipografía personalizada (simulada como Winky SAS) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    /* Colores corporativos */
+    :root {
+      --color1: #F1F0F2;
+      --color2: #6D7365;
+      --color3: #252621;
+      --color4: #585956;
+      --color5: #BFBFBF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif; /* Simulación de Winky SAS */
+      background-color: var(--color1);
+      color: var(--color3);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--color1);
+      padding: 1rem 2rem;
+      color: white;
+    }
+
+    header img {
+      height: 80px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main section {
+      padding: 3rem 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--color2);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero button {
+      background-color: var(--color3);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Nuestra Empresa */
+    .empresa {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .empresa img {
+      width: 300px;
+      border-radius: 8px;
+      margin: 10px;
+    
+    }
+
+    .servicios, .galeria {
+      text-align: center;
+    }
+
+    .lista-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .servicio {
+      background-color: var(--color5);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    /* Galería */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .galeria-grid img {
+      width: 60%;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .galeria-grid img:hover {
+      box-shadow: 0 0 10px 2px grey;
+      transform: scale(1.02);
+    }
+
+    /* Contacto */
+    .contacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid var(--color4);
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: var(--color2);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: var(--color3);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empresa.html">Nuestra empresa</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección Hero -->
+    <section class="hero">
+      <h1>Transformamos ideas en impresiones inolvidables</h1>
+      <a href="https://wa.me/573154649933" target="_blank">
+        <button>Escríbenos</button>
+      </a>
+    </section>
+
+    <!-- Sección Nuestra Empresa -->
+    <section id="empresa" class="empresa">
+      <div>
+      <img src="IMAGES/Logo.jpg" alt="Nuestra empresa">
+      </div>
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p><strong>Misión:</strong> En JC Impresos nos debemos a nuestros clientes y es nuestra verdadera misión asistirlos técnicamente en el uso de los mejores procesos de producción, teniendo en cuenta sus necesidades, exigencias, expectativas y presupuesto, para finalmente entregar un productos de la más alta calidad a un precio justo. </p>
+        <p><strong>Visión:</strong> Para el año 2028, JC Impresos será una empresa líder y reconocida en el sector de la
+comunicación gráfica como la mejor opción al momento de diseñar y producir cualquier
+pieza gráfica, gracias a la responsabilidad, cumplimiento y calidad de sus productos y
+servicios ofreciendo a nuestros clientes una diversidad de soluciones, manteniéndonos
+siempre a la vanguardia en los avances de la tecnología.</p>
+        <p><strong>Valores:</strong> Trabajo en equipo, Confianza, Seguridad, Calidad, Creatividad.</p>
+      </div>
+    </section>
+    <!-- Sección Servicios -->
+    <section id="servicios" class="servicios">
+      <!-- <h2>Nuestros Servicios</h2> -->
+      <img src="IMAGES/nuestros servicios.png" alt="Imagen servicios">
+      <div class="lista-servicios">
+        <div class="servicio">
+          <h3>Línea Editorial</h3>
+          <ul>
+            <li>Libros</li>
+            <li>Revistas</li>
+            <li>Boletines</li>
+            <li>Directorios</li>
+            <li>Cuadernos</li>
+            <li>Agendas</li>
+            <li>Programadores</li>
+            <li>Catálogos</li>
+            <li>Folletos</li>
+          </ul>
+        </div>
+        <div class="servicio">
+          <h3>Etiquetas y Solapas</h3>
+          <ul>
+            <li>En cartón y papel</li>
+            <li>Adhesivas</li>
+            <li>Rótulos para productos y embalajes</li>
+            <li>Solapas para confecciones</li>
+            <li>Cartones skins</li>
+            <li>Plantillas para calcetería</li>
+            <li>Almas en cartón para la industria textil</li>
+            <li>Bandas adhesivas y en papel</li>
+            <li>Stickers</li>
+          </ul>
+        </div>
+        <div class="servicio">
+          <h3>Cajas y Bolsas</h3>
+          <ul>
+            <li>Cajas plegadizas</li>
+            <li>Cajas para alimentos</li>
+            <li>Cajas micro-corrugado</li>
+            <li>Cajas para embalaje</li>
+            <li>Cajas para repostería</li>
+            <li>Bolsas de papel</li>
+            <li>Caballetes en cartón</li>
+            <li>Estuchería fina</li>
+            <li>Saltarines, Habladores</li>
+          </ul>
+        </div>
+        <div class="servicio">
+          <h3>Papelería Comercial</h3>
+          <ul>
+            <li>Talonarios</li>
+            <li>Tarjetas comerciales</li>
+            <li>Hojas membrete</li>
+            <li>Carpetas y brochure</li>
+            <li>Volantes, plegables y afiches</li>
+            <li>Carnets y escarapelas</li>
+            <li>Calendarios</li>
+            <li>Sellos automáticos y de madera</li>
+            <li>Sobres y folders</li>
+          </ul>
+        </div>
+        <div class="servicio">
+          <h3>Impresión Digital y Gran Formato</h3>
+          <ul>
+            <li>Pendones y lonas</li>
+            <li>Pasacalles y vallas publicitarias</li>
+            <li>Adhesivos vinilos y micro-perforados</li>
+            <li>Acrílicos</li>
+            <li>MDF Troquelado</li>
+            <li>Señalización en todo tipo de materiales</li>
+            <li>Avisos luminosos en acrílico y panaflex</li>
+            <li>Bastidores</li>
+            <li>Porta-pendones</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section id="galeria" class="galeria">
+      <h2>Galería</h2>
+      <div class="galeria-grid">
+        <img src="IMAGES/linea editorial.jpg" alt="Trabajo 1">
+        <img src="IMAGES/EDITORIAL2.png" alt="Trabajo 2">
+        <img src="IMAGES/EDITORIAL3.png" alt="Trabajo 3">
+        <img src="IMAGES/CAJAS1.png" alt="Trabajo 4">
+        <img src="IMAGES/CAJAS2.png" alt="Trabajo 5">
+        <img src="IMAGES/CAJAS3.png" alt="Trabajo 6">
+        <img src="IMAGES/ETIQUETA1.png" alt="Trabajo 7">
+        <img src="IMAGES/ETIQUETA2.png" alt="Trabajo 8">
+        <img src="IMAGES/ETIQUETA3.png" alt="Trabajo 9">
+      </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contacto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0751135598002!2d-75.5726225260269!3d6.253834226240425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428fc21abbbc9%3A0x31d53b8ed99d422c!2sCra.%2054%20%2353-50%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1746722471307!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <form>
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea rows="5" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/jc_impresoscol?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMAGES/icono Instagram.jpeg" alt="Instagram"></a>
+      <a href="https://wa.me/573154649933" target="_blank"><img src="IMAGES/icono whatsapp.png" alt="Whatsapp"></a>
+      <a href="mailto:jc.impresoscol@gmail.com"><img src="IMAGES/icono correo.jpeg" alt="Correo"></a>
+    </div>
+    <p>&copy; 2025 JC Impresos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

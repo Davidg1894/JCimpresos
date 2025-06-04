@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Impresos</title>
+  
+  <!-- Tipografía personalizada (simulada como Winky SAS) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    /* Colores corporativos */
+    :root {
+      --color1: #F1F0F2;
+      --color2: #6D7365;
+      --color3: #252621;
+      --color4: #585956;
+      --color5: #BFBFBF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif; /* Simulación de Winky SAS */
+      background-color: var(--color1);
+      color: var(--color3);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--color4);
+      padding: 1rem 2rem;
+      color: white;
+    }
+
+    header img {
+      height: 80px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main section {
+      padding: 3rem 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--color2);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero button {
+      background-color: var(--color3);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Nuestra Empresa */
+    .empresa {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .empresa img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .servicios, .galeria {
+      text-align: center;
+    }
+
+    .lista-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .servicio {
+      background-color: var(--color5);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    /* Galería */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .galeria-grid img {
+      width: 60%;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .galeria-grid img:hover {
+      box-shadow: 0 0 10px 2px grey;
+      transform: scale(1.02);
+    }
+
+    /* Contacto */
+    .contacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid var(--color4);
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: var(--color2);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: var(--color3);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empresa.html">Nuestra empresa</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+   s
+
+    <!-- Sección Galería -->
+    <section id="galeria" class="galeria">
+      <h2>Galería</h2>
+      <div class="galeria-grid">
+        <img src="IMAGES/linea editorial.jpg" alt="Trabajo 1">
+        <img src="IMAGES/EDITORIAL2.png" alt="Trabajo 2">
+        <img src="IMAGES/EDITORIAL3.png" alt="Trabajo 3">
+        <img src="IMAGES/CAJAS1.png" alt="Trabajo 4">
+        <img src="IMAGES/CAJAS2.png" alt="Trabajo 5">
+        <img src="IMAGES/CAJAS3.png" alt="Trabajo 6">
+        <img src="IMAGES/ETIQUETA1.png" alt="Trabajo 7">
+        <img src="IMAGES/ETIQUETA2.png" alt="Trabajo 8">
+        <img src="IMAGES/ETIQUETA3.png" alt="Trabajo 9">
+      </div>
+    </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/jc_impresoscol?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMAGES/icono Instagram.jpeg" alt="Instagram"></a>
+      <a href="https://wa.me/573154649933" target="_blank"><img src="IMAGES/icono whatsapp.png" alt="Whatsapp"></a>
+      <a href="mailto:jc.impresoscol@gmail.com"><img src="IMAGES/icono correo.jpeg" alt="Correo"></a>
+    </div>
+    <p>&copy; 2025 JC Impresos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -24,91 +24,6 @@
       color: var(--color3);
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--color4);
-      padding: 1rem 2rem;
-      color: white;
-    }
-
-    header img {
-      height: 80px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main section {
-      padding: 3rem 2rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      background-color: var(--color2);
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero button {
-      background-color: var(--color3);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    /* Nuestra Empresa */
-    .empresa {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .empresa img {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 10px;
-    }
-
-    .servicios, .galeria {
-      text-align: center;
-    }
-
-    .lista-servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .servicio {
-      background-color: var(--color5);
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: left;
-    }
-
     /* Galería */
     .galeria-grid {
       display: grid;
@@ -173,6 +88,7 @@
       width: 30px;
       height: 30px;
     }
+
     .contenedor2{
       display: flex;
       justify-content: center;
@@ -181,15 +97,187 @@
       padding: 20px;
       margin-right: 20px;
     }
+
     .contenido{
       margin: 40px;
+    }
+
+    /* Encabezado */
+    header {
+      background: var(--color1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 10px rgba(37, 38, 33, 0.1);
+    }
+
+    /* Logo clickeable */
+    .logo-link {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-link:hover {
+      transform: scale(1.05);
+    }
+
+    header img {
+      height: 100px;
+      width: auto;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color3);
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    /* Efecto de subrayado al hover */
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color2);
+      transition: width 0.4s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--color2);
+    }
+
+    /* Responsive básico */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      nav ul {
+        gap: 1rem;
+      }
+      
+      nav a {
+        font-size: 0.9rem;
+      }
+      
+      header img {
+        height: 40px;
+      }
+    }
+
+    /* Estilos existentes mejorados */
+    .empresa {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .empresa img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(37, 38, 33, 0.1);
+    }
+
+    .contenedor2 {
+      display: flex;
+      align-items: center;
+      margin: 3rem auto;
+      max-width: 1200px;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(37, 38, 33, 0.08);
+      gap: 2rem;
+    }
+
+    .contenedor2:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .foto {
+      flex: 0 0 300px;
+    }
+
+    .foto img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .contenido {
+      flex: 1;
+      color: var(--color3);
+      line-height: 1.6;
+    }
+
+    .contenido p {
+      font-size: 1.1rem;
+    }
+
+    .contenido strong {
+      color: var(--color2);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .contenedor2 {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .foto {
+        flex: none;
+      }
+
+      .foto img {
+        max-width: 250px;
+      }
+    }
+
+    /* Animación de carga */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contenedor2 {
+      animation: fadeInUp 0.6s ease-out;
     }
   </style>
 </head>
 <body>
   <!-- Encabezado -->
   <header>
-    <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
+    <a href="index.html" class="logo-link">
+      <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
+    </a>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -202,59 +290,39 @@
   </header>
 
   <main>
-    <!-- Sección Hero -->
-    <!-- <section class="hero">
-      <h1>Transformamos ideas en impresiones inolvidables</h1>
-      <a href="https://wa.me/573154649933" target="_blank">
-        <button>Escríbenos</button>
-      </a>
-    </section> -->
-
     <!-- Sección Nuestra Empresa -->
     <section id="empresa" class="empresa">
-      <img src="IMAGES/heidelberg.jpg" alt="Transformamos ideas en impresiones inolvidables" >
-      <div>
-        
-      </div>
+      <img src="IMAGES/Logo-removebg-preview.png" alt="Transformamos ideas en impresiones inolvidables">
+      <div></div>
     </section>
+
     <!-- Sección Servicios -->
-     <div class="mision contenedor2">
+    <div class="mision contenedor2">
       <div class="foto">
-        <img src="IMAGES/imgmision.jpg" alt="Logo JC Impresos" style="width: 300px;">
-   
+        <img src="IMAGES/imgmision.jpg" alt="Misión JC Impresos">
       </div>
       <div class="contenido">
-        <p><strong>Misión:</strong> En JC Impresos nos debemos a nuestros clientes y es nuestra verdadera misión asistirlos técnicamente en el uso de los mejores procesos de producción, teniendo en cuenta sus necesidades, exigencias, expectativas y presupuesto, para finalmente entregar un productos de la más alta calidad a un precio justo. </p>
-
-
+        <p><strong>Misión:</strong> En JC Impresos nos debemos a nuestros clientes y es nuestra verdadera misión asistirlos técnicamente en el uso de los mejores procesos de producción, teniendo en cuenta sus necesidades, exigencias, expectativas y presupuesto, para finalmente entregar un productos de la más alta calidad a un precio justo.</p>
       </div>
-     </div>
-     <div class="visión contenedor2">
+    </div>
+
+    <div class="visión contenedor2">
       <div class="foto">
-       <img src="IMAGES/imgvision.jpg" alt="Logo JC Impresos" style="width: 300px;">
+        <img src="IMAGES/imgvision.jpg" alt="Visión JC Impresos">
       </div>
       <div class="contenido">
-        <p><strong>Visión:</strong> Para el año 2028, JC Impresos será una empresa líder y reconocida en el sector de la
-comunicación gráfica como la mejor opción al momento de diseñar y producir cualquier
-pieza gráfica, gracias a la responsabilidad, cumplimiento y calidad de sus productos y
-servicios ofreciendo a nuestros clientes una diversidad de soluciones, manteniéndonos
-siempre a la vanguardia en los avances de la tecnología.</p>
-
+        <p><strong>Visión:</strong> Para el año 2028, JC Impresos será una empresa líder y reconocida en el sector de la comunicación gráfica como la mejor opción al momento de diseñar y producir cualquier pieza gráfica, gracias a la responsabilidad, cumplimiento y calidad de sus productos y servicios ofreciendo a nuestros clientes una diversidad de soluciones, manteniéndonos siempre a la vanguardia en los avances de la tecnología.</p>
       </div>
-     </div>
-     <div class="valores contenedor2">
+    </div>
+
+    <div class="valores contenedor2">
       <div class="foto">
-       <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos" style="width: 300px;">
+        <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
       </div>
       <div class="contenido">
-        <p><strong>Nuestra Empresa:</strong> JC Impresos cuenta con una amplia trayectoria de más de 10 años en el sector de las artes
-gráficas lo que nos permite contar hoy en día con toda la tecnología de punta, y un ciclo
-completo de producción que operado por un excelente y calificado equipo humano nos
-da la capacidad de ofrecer un excelente portafolio de productos y servicios, con el que
-logramos sa</p>
+        <p><strong>Nuestra Empresa:</strong> JC Impresos cuenta con una amplia trayectoria de más de 10 años en el sector de las artes gráficas lo que nos permite contar hoy en día con toda la tecnología de punta, y un ciclo completo de producción que operado por un excelente y calificado equipo humano nos da la capacidad de ofrecer un excelente portafolio de productos y servicios, con el que logramos satisfacer las necesidades de nuestros clientes.</p>
       </div>
-     </div>
-    
+    </div>
   </main>
 
   <!-- Footer -->

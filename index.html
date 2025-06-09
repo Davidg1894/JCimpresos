@@ -34,25 +34,6 @@
       padding: 1rem 2rem;
       color: white;
     }
-
-    header img {
-      height: 80px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
     main section {
       padding: 3rem 2rem;
     }
@@ -111,26 +92,135 @@
       text-align: left;
     }
 
-    /* Galería */
-    .galeria-grid {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-  
-      
-    }
+    .galeria {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
 
-    .galeria-grid img {
-      width: 25%;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+        .galeria h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
 
-    .galeria-grid img:hover {
-      box-shadow: 0 0 10px 2px grey;
-      transform: scale(1.02);
-    }
+        .galeria h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .galeria-item {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .btn-cotizar {
+            display: block;
+            width: 100%;
+            padding: 8px 15px;
+            background: linear-gradient(45deg, #6c757d, #495057);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cotizar::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            vertical-align: middle;
+        }
+
+        .btn-cotizar:hover {
+            background: linear-gradient(45deg, #495057, #343a40);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+
+        .btn-cotizar:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .galeria h2 {
+                font-size: 2.2rem;
+            }
+            
+            .galeria {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galeria-item img {
+                height: 200px;
+            }
+            
+            .btn-cotizar {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
 
     /* Contacto */
     .contacto {
@@ -178,30 +268,296 @@
       width: 30px;
       height: 30px;
     }
+   
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Sección Hero */
+        .hero {
+            min-height: 80vh;
+            /* Coloca aquí la URL de tu imagen de fondo */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              var(--hero-bg-image, url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1958&q=80'));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Opción 1: Cambiar imagen usando variable CSS */
+        .hero.custom-bg {
+            --hero-bg-image: url(IMAGES/heroheidelber.png);
+        }
+
+        /* Opción 2: Clases predefinidas para diferentes fondos */
+        .hero.bg-printing {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+        }
+
+        .hero.bg-design {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+        }
+
+        .hero.bg-colors {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+            max-width: 900px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+        }
+
+        .hero a {
+            text-decoration: none;
+        }
+
+        .hero button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero button:hover {
+            background-color: #20b954;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .hero button:active {
+            transform: translateY(-1px);
+        }
+
+        .whatsapp-icon {
+            width: 10px;
+            height: 10px;
+            fill: #000000;
+            transition: transform 0.3s ease;
+        }
+
+        .hero button:hover .whatsapp-icon {
+            transform: scale(1.1);
+        }
+
+        /* Efecto de ondas en el botón */
+        .hero button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero button:hover::before {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero button {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero button {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero button {
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+       
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background-color: var(--color1);
+        }
+
+        /* Encabezado */
+        header {
+            background: var(--color1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(37, 38, 33, 0.1);
+        }
+        header img {
+            height: 100px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color3);
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        /* Efecto de subrayado al hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color2);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--color2);
+        }
+
+        /* Responsive básico */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+            }
+            
+            header img {
+                height: 40px;
+            }
+        }
   </style>
 </head>
 <body>
   <!-- Encabezado -->
-  <header>
-    <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="empresa.html">Nuestra empresa</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <img src="IMAGES/Logo-removebg-preview.png" alt="Logo JC Impresos">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Nuestra empresa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
   <main>
-    <!-- Sección Hero -->
-    <section class="hero">
-      <h1>Transformamos ideas en impresiones inolvidables</h1>
-      <a href="https://wa.me/573154649933" target="_blank">
-        <button>Escríbenos</button>
-      </a>
+   <section class="hero">
+    
+    <!-- Opción 2: Hero con variable CSS personalizada -->
+    <!-- <section class="hero custom-bg" style="--hero-bg-image: url('ruta/a/tu/imagen.jpg')"> -->
+    
+    <!-- Opción 3: Hero con clase predefinida (descomenta la que prefieras) -->
+    <!-- <section class="hero bg-printing"> -->
+    <!-- <section class="hero bg-design"> -->
+    <!-- <section class="hero bg-colors"> -->
+    
+        <h1>Transformamos ideas en impresiones inolvidables</h1>
+        <a href="https://wa.me/573154649933" target="_blank">
+            <button>
+                <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63"/>
+                </svg>
+                Escríbenos
+            </button>
+        </a>
     </section>
 
     <!-- Sección Nuestra Empresa -->
@@ -300,23 +656,53 @@ siempre a la vanguardia en los avances de la tecnología.</p>
 
     <!-- Sección Galería -->
     <section id="galeria" class="galeria">
-      <h2>Galería</h2>
-      <div class="galeria-grid">
-        <img src="IMAGES/EDITORIAL1.png" alt="Trabajo 1">
-        <img src="IMAGES/EDITORIAL2.png" alt="Trabajo 2">
-        <img src="IMAGES/EDITORIAL3.png" alt="Trabajo 3">
-      </div>
-      <div class="galeria-grid">
-        <img src="IMAGES/CAJAS1.png" alt="Trabajo 4">
-        <img src="IMAGES/CAJAS2.png" alt="Trabajo 5">
-        <img src="IMAGES/CAJAS3.png" alt="Trabajo 6">
+        <h2>Galería</h2>
+        
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo1.jpg" alt="Trabajo Editorial 1">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo2.jpg" alt="Trabajo Editorial 2">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo3.jpg" alt="Trabajo Editorial 3">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
         </div>
-       <div class="galeria-grid">
-        <img src="IMAGES/ETIQUETA1.png" alt="Trabajo 7">
-        <img src="IMAGES/ETIQUETA2.png" alt="Trabajo 8">
-        <img src="IMAGES/ETIQUETA3.png" alt="Trabajo 9">
+        
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo5.jpg" alt="Trabajo Cajas 1">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo8.jpg" alt="Trabajo Cajas 2">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo9.jpg" alt="Trabajo Cajas 3">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
         </div>
-      
+        
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo 4.jpg" alt="Trabajo Etiquetas 1">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo10.png" alt="Trabajo Etiquetas 2">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+            <div class="galeria-item">
+                <img src="IMAGES/trabajo11.png" alt="Trabajo Etiquetas 3">
+                <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank">Cotiza Ya</a>
+            </div>
+        </div>
+
     </section>
 
     <!-- Sección Contacto -->

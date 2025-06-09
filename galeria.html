@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JC Impresos</title>
+  <title>JC Impresos - Galería</title>
   
   <!-- Tipografía personalizada (simulada como Winky SAS) -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -19,214 +19,478 @@
 
     body {
       margin: 0;
-      font-family: 'Montserrat', sans-serif; /* Simulación de Winky SAS */
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--color1);
       color: var(--color3);
     }
 
+    /* Encabezado */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--color4);
-      padding: 1rem 2rem;
-      color: white;
+        background: var(--color1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 2px 10px rgba(37, 38, 33, 0.1);
+    }
+
+    .logo-link {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .logo-link:hover {
+        transform: scale(1.05);
     }
 
     header img {
-      height: 80px;
+        height: 80px;
+        width: auto;
     }
 
     nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+        margin: 0;
+        padding: 0;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+        text-decoration: none;
+        color: var(--color3);
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.3s ease;
     }
 
-    main section {
-      padding: 3rem 2rem;
+    nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--color2);
+        transition: width 0.4s ease;
     }
 
-    /* Hero Section */
-    .hero {
-      background-color: var(--color2);
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
+    nav a:hover::after {
+        width: 100%;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    nav a:hover {
+        color: var(--color2);
     }
 
-    .hero button {
-      background-color: var(--color3);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
+    /* Galería mejorada */
+    .galeria {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
     }
 
-    /* Nuestra Empresa */
-    .empresa {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
+    .galeria h2 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 50px;
+        color: black;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
     }
 
-    .empresa img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
+    .galeria h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
     }
 
-    .servicios, .galeria {
-      text-align: center;
-    }
-
-    .lista-servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .servicio {
-      background-color: var(--color5);
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: left;
-    }
-
-    /* Galería */
     .galeria-grid {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-  
-      
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-bottom: 50px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .galeria-grid img {
-      width: 25%;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
+    .galeria-item {
+        position: relative;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
     }
 
-    .galeria-grid img:hover {
-      box-shadow: 0 0 10px 2px grey;
-      transform: scale(1.02);
+    .galeria-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     }
 
-    /* Contacto */
-    .contacto {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    .galeria-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
     }
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
+    .galeria-item:hover img {
+        transform: scale(1.05);
     }
 
-    form input, form textarea, form button {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      border: 1px solid var(--color4);
-      border-radius: 5px;
+    /* Overlay para mostrar imagen completa */
+    .image-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        animation: fadeIn 0.3s ease;
     }
 
-    form button {
-      background-color: var(--color2);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    .image-overlay.active {
+        display: flex;
     }
 
+    .overlay-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        animation: zoomIn 0.3s ease;
+    }
+
+    .overlay-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        color: var(--color3);
+    }
+
+    .close-btn:hover {
+        background: var(--color2);
+        color: white;
+        transform: scale(1.1);
+    }
+
+    /* Indicador de hover */
+    .hover-indicator {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .galeria-item:hover .hover-indicator {
+        opacity: 1;
+    }
+
+    .btn-cotizar {
+        display: block;
+        width: 100%;
+        padding: 8px 15px;
+        background: linear-gradient(45deg, #6c757d, #495057);
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-cotizar::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+    }
+
+    .btn-cotizar:hover {
+        background: linear-gradient(45deg, #495057, #343a40);
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+        from { 
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        to { 
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Footer */
     footer {
-      background-color: var(--color3);
-      color: white;
-      text-align: center;
-      padding: 1rem;
+        background-color: var(--color3);
+        color: white;
+        text-align: center;
+        padding: 1rem;
     }
 
     .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
     }
 
     .social-icons img {
-      width: 30px;
-      height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        header {
+            padding: 1rem;
+        }
+        
+        nav ul {
+            gap: 1rem;
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+        }
+        
+        header img {
+            height: 40px;
+        }
+
+        .galeria-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .galeria h2 {
+            font-size: 2.2rem;
+        }
+        
+        .galeria {
+            padding: 40px 15px;
+        }
+
+        .overlay-content {
+            max-width: 95vw;
+            max-height: 85vh;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .galeria-item img {
+            height: 200px;
+        }
+        
+        .btn-cotizar {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado -->
-  <header>
-    <img src="IMAGES/Logo.jpg" alt="Logo JC Impresos">
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="empresa.html">Nuestra empresa</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Encabezado -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="IMAGES/Logo-removebg-preview.png" alt="Logo JC Impresos">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Nuestra empresa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-   s
+    <main>
+        <!-- Sección Galería -->
+        <section id="galeria" class="galeria">
+            <h2>Galería</h2>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo1.jpg', 'Trabajo Editorial 1')">
+                    <img src="IMAGES/trabajo1.jpg" alt="Trabajo Editorial 1">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo2.jpg', 'Trabajo Editorial 2')">
+                    <img src="IMAGES/trabajo2.jpg" alt="Trabajo Editorial 2">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo3.jpg', 'Trabajo Editorial 3')">
+                    <img src="IMAGES/trabajo3.jpg" alt="Trabajo Editorial 3">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20editorial%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+            </div>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo5.jpg', 'Trabajo Cajas 1')">
+                    <img src="IMAGES/trabajo5.jpg" alt="Trabajo Cajas 1">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo8.jpg', 'Trabajo Cajas 2')">
+                    <img src="IMAGES/trabajo8.jpg" alt="Trabajo Cajas 2">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo9.jpg', 'Trabajo Cajas 3')">
+                    <img src="IMAGES/trabajo9.jpg" alt="Trabajo Cajas 3">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20cajas%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+            </div>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo12.png', 'Trabajo Etiquetas 1')">
+                    <img src="IMAGES/trabajo12.png" alt="Trabajo Etiquetas 1">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%201" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo10.png', 'Trabajo Etiquetas 2')">
+                    <img src="IMAGES/trabajo10.png" alt="Trabajo Etiquetas 2">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%202" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+                <div class="galeria-item" onclick="openImageOverlay('IMAGES/trabajo11.png', 'Trabajo Etiquetas 3')">
+                    <img src="IMAGES/trabajo11.png" alt="Trabajo Etiquetas 3">
+                    <div class="hover-indicator">👁️ Ver completa</div>
+                    <a href="https://wa.me/573154649933?text=Hola,%20me%20interesa%20cotizar%20un%20trabajo%20de%20etiquetas%20como%20el%20de%20la%20imagen%203" class="btn-cotizar" target="_blank" onclick="event.stopPropagation()">Cotiza Ya</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-     <!-- Sección Galería -->
-    <section id="galeria" class="galeria">
-      <h2>Galería</h2>
-      <div class="galeria-grid">
-        <img src="IMAGES/EDITORIAL1.png" alt="Trabajo 1">
-        <img src="IMAGES/EDITORIAL2.png" alt="Trabajo 2">
-        <img src="IMAGES/EDITORIAL3.png" alt="Trabajo 3">
-      </div>
-      <div class="galeria-grid">
-        <img src="IMAGES/CAJAS1.png" alt="Trabajo 4">
-        <img src="IMAGES/CAJAS2.png" alt="Trabajo 5">
-        <img src="IMAGES/CAJAS3.png" alt="Trabajo 6">
+    <!-- Overlay para mostrar imagen completa -->
+    <div id="imageOverlay" class="image-overlay" onclick="closeImageOverlay()">
+        <div class="overlay-content" onclick="event.stopPropagation()">
+            <img id="overlayImage" class="overlay-image" src="" alt="">
+            <button class="close-btn" onclick="closeImageOverlay()">×</button>
         </div>
-       <div class="galeria-grid">
-        <img src="IMAGES/ETIQUETA1.png" alt="Trabajo 7">
-        <img src="IMAGES/ETIQUETA2.png" alt="Trabajo 8">
-        <img src="IMAGES/ETIQUETA3.png" alt="Trabajo 9">
-        </div>
-      
-    </section>
-
-  
-
-  <!-- Footer -->
-  <footer>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/jc_impresoscol?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="IMAGES/icono Instagram.jpeg" alt="Instagram"></a>
-      <a href="https://wa.me/573154649933" target="_blank"><img src="IMAGES/icono whatsapp.png" alt="Whatsapp"></a>
-      <a href="mailto:jc.impresoscol@gmail.com"><img src="IMAGES/icono correo.jpeg" alt="Correo"></a>
     </div>
-    <p>&copy; 2025 JC Impresos. Todos los derechos reservados.</p>
-  </footer>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/jc_impresoscol?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="IMAGES/icono Instagram.jpeg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/573154649933" target="_blank">
+                <img src="IMAGES/icono whatsapp.png" alt="Whatsapp">
+            </a>
+            <a href="mailto:jc.impresoscol@gmail.com">
+                <img src="IMAGES/icono correo.jpeg" alt="Correo">
+            </a>
+        </div>
+        <p>&copy; 2025 JC Impresos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function openImageOverlay(imageSrc, imageAlt) {
+            const overlay = document.getElementById('imageOverlay');
+            const overlayImage = document.getElementById('overlayImage');
+            
+            overlayImage.src = imageSrc;
+            overlayImage.alt = imageAlt;
+            overlay.classList.add('active');
+            
+            // Prevenir scroll del body
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageOverlay() {
+            const overlay = document.getElementById('imageOverlay');
+            overlay.classList.remove('active');
+            
+            // Restaurar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar overlay con tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageOverlay();
+            }
+        });
+
+        // Efecto de hover mejorado para mostrar indicador
+        document.querySelectorAll('.galeria-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.cursor = 'pointer';
+            });
+        });
+    </script>
 </body>
 </html>
